@@ -32,7 +32,7 @@ export default function Sidebar(){
             <div className="flex flex-col gap-5">
                 <span className="text-lg font-semibold">Price</span>
                 <span>{priceRange[0]}$ - {priceRange[1]}$</span>
-                <Slider defaultValue={[0, 5000]} min={0} max={20000} step={1} onValueChange={(value) => {setPriceRange(value); dispatch(filterPriceRange(value))}} />
+                <Slider defaultValue={[0, 5000]} min={0} max={5000} step={1} onValueChange={(value) => {setPriceRange(value); dispatch(filterPriceRange(value))}} />
             </div>
             <div></div>
         </div>
