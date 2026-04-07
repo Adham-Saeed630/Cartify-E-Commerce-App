@@ -9,7 +9,7 @@ export default function Sidebar(){
     const data = useSelector(state => state.products.data);
     const checkedCategories = useSelector(state => state.products.checkedCategories);
 
-    const [priceRange, setPriceRange] = useState([0, 20000]);
+    const [priceRange, setPriceRange] = useState([0, 5000]);
 
     const categories = [...new Set(data.map(item => item.category))];
 
@@ -32,7 +32,7 @@ export default function Sidebar(){
             <div className="flex flex-col gap-5">
                 <span className="text-lg font-semibold">Price</span>
                 <span>{priceRange[0]}$ - {priceRange[1]}$</span>
-                <Slider defaultValue={[0, 20000]} min={0} max={20000} step={1} onValueChange={(value) => {setPriceRange(value); dispatch(filterPriceRange(value))}} />
+                <Slider defaultValue={[0, 5000]} min={0} max={20000} step={1} onValueChange={(value) => {setPriceRange(value); dispatch(filterPriceRange(value))}} />
             </div>
             <div></div>
         </div>
