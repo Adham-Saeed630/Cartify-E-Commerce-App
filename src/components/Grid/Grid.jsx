@@ -6,6 +6,8 @@ import Card from "../Card/Card";
 
 export default function Grid(){
 
+    const priceRange = useSelector(state => state.products.priceRange);
+    const checkedCategories = useSelector(state => state.products.checkedCategories);
     const data = useSelector(state => state.products.data);
     const dispatch = useDispatch();
 
@@ -17,14 +19,14 @@ export default function Grid(){
         })
     }, [dispatch]);
 
-    useEffect(() => {
-        console.log(data)
-    }, [data])
+    const showedData = data.filter((product) => checkedCategories.includes(product.category) && product.price >= priceRange.min && product.price <= priceRange.max)
+
+    console.log(showedData)
 
     return(
         <div className="flex justify-center flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-15">
-                {data.length > 0 ? data.map((product) => <Card key={product.id} product={product} />) : <span className="text-(--text-light) font-semibold text-lg">Loading...</span>}
+                {showedData.length > 0 ? showedData.map((product) => <Card key={product.id} product={product} />) : <span className="w-full text-(--text-light) font-semibold text-lg text-center">No Product Available!</span>}
             </div>
         </div>
     )
