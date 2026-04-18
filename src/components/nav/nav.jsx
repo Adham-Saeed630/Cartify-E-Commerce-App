@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 import Cart from '@/components/Cart/Cart';
+import { Menu } from 'lucide-react';
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDisplayCart } from "@/features/cart/cart";
 import { Search, Heart, UserRound, ShoppingBasket } from 'lucide-react';
@@ -14,12 +15,17 @@ export default function Nav(){
     const cartCounter = useSelector(state => state.cart.counter);
 
     return(
-        <div className="relative w-full px-10 py-5 bg-(--background-light) text-(--text-light) flex items-center justify-between">
+        <div className="relative w-full px-5 lg:px-10 py-5 bg-(--background-light) text-(--text-light) flex items-center justify-between">
             <div className="flex items-center gap-5">
-                <img src={logo} alt="Logo" className="w-7.5" />
-                <span className="text-xl font-semibold">Cartify</span>
+                <div className="cursor-pointer lg:hidden">
+                    <Menu />
+                </div>
+                <div className="flex items-center gap-3">
+                    <img src={logo} alt="Logo" className="w-7.5" />
+                    <span className="text-xl font-semibold">Cartify</span>
+                </div>
             </div>
-            <div className="sticky right-[50%] translate-x-[50%]">
+            <div className="sticky right-[50%] translate-x-[50%] hidden lg:block">
                 <ul className="flex items-center gap-5 font-semibold">
                     <li>Home</li>
                     <li>Products</li>
@@ -27,7 +33,7 @@ export default function Nav(){
                     <li>About</li>
                 </ul>
             </div>
-            <div className="flex gap-5">
+            <div className="flex gap-2 lg:gap-5">
                 <button className="p-1.5 bg-neutral-50 rounded-lg flex items-center gap-5 group"><Search className="hover:scale-120 transition-all duration-200 cursor-pointer"/></button>
                 <button className="p-1.5 bg-neutral-50 rounded-lg"><Heart className="hover:scale-120 transition-all duration-200 cursor-pointer"/></button>
                 <button className="p-1.5 bg-neutral-50 rounded-lg"><UserRound className="hover:scale-120 transition-all duration-200 cursor-pointer"/></button>

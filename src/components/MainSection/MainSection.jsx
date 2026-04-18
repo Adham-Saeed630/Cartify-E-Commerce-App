@@ -18,7 +18,7 @@ export default function MainSection(){
                     </ButtonGroup>
                 </Field>
             </div>
-            <div className="flex gap-15">
+            <div className="flex flex-col lg:flex-row gap-15">
                 <Sidebar />
                 <Grid />
             </div>
