@@ -20,17 +20,17 @@ export default function Nav(){
                 <div className="cursor-pointer lg:hidden">
                     <Menu />
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 cursor-pointer">
                     <img src={logo} alt="Logo" className="w-7.5" />
                     <span className="text-xl font-semibold">Cartify</span>
                 </div>
             </div>
             <div className="sticky right-[50%] translate-x-[50%] hidden lg:block">
                 <ul className="flex items-center gap-5 font-semibold">
-                    <li>Home</li>
-                    <li>Products</li>
-                    <li>Categories</li>
-                    <li>About</li>
+                    <li className="hover:text-blue-500 hover:scale-110 transition-all duration-200 cursor-pointer">Home</li>
+                    <li className="hover:text-blue-500 hover:scale-110 transition-all duration-200 cursor-pointer">Products</li>
+                    <li className="hover:text-blue-500 hover:scale-110 transition-all duration-200 cursor-pointer">Categories</li>
+                    <li className="hover:text-blue-500 hover:scale-110 transition-all duration-200 cursor-pointer">About</li>
                 </ul>
             </div>
             <div className="flex gap-2 lg:gap-5">
