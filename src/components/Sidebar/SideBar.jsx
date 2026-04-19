@@ -17,7 +17,7 @@ export default function Sidebar(){
     const categories = [...new Set(data.map(item => item.category))];
 
     return(
-        <div className={`flex flex-col gap-5 transition-all duration-200 ${expandFilter ? "h-96" : "h-15"} lg:h-auto overflow-y-hidden`}>
+        <div className={`flex flex-col gap-5 transition-all duration-200 ${expandFilter ? "h-96" : "h-15"} lg:h-auto overflow-hidden`}>
             <div className='flex justify-between items-center cursor-pointer' onClick={() => dispatch(toggleExpandFilter())}>
                 <span className="text-xl font-semibold">Filter Options</span>  
                 <div className={`p-1 border-2 border-neutral-900 rounded-md flex items-center gap-2 lg:hidden`}>
